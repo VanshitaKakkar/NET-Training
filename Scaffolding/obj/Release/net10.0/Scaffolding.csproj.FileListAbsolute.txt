@@ -1,0 +1,10 @@
+C:\Users\vkakkar\source\repos\NETAssignment\Scaffolding\obj\Release\net10.0\Scaffolding.csproj.AssemblyReference.cache
+C:\Users\vkakkar\source\repos\NETAssignment\Scaffolding\obj\Release\net10.0\rpswa.dswa.cache.json
+C:\Users\vkakkar\source\repos\NETAssignment\Scaffolding\obj\Release\net10.0\Scaffolding.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vkakkar\source\repos\NETAssignment\Scaffolding\obj\Release\net10.0\Scaffolding.AssemblyInfoInputs.cache
+C:\Users\vkakkar\source\repos\NETAssignment\Scaffolding\obj\Release\net10.0\Scaffolding.AssemblyInfo.cs
+C:\Users\vkakkar\source\repos\NETAssignment\Scaffolding\obj\Release\net10.0\Scaffolding.csproj.CoreCompileInputs.cache
+C:\Users\vkakkar\source\repos\NETAssignment\Scaffolding\obj\Release\net10.0\Scaffolding.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\vkakkar\source\repos\NETAssignment\Scaffolding\obj\Release\net10.0\Scaffolding.RazorAssemblyInfo.cache
+C:\Users\vkakkar\source\repos\NETAssignment\Scaffolding\obj\Release\net10.0\Scaffolding.RazorAssemblyInfo.cs
+C:\Users\vkakkar\source\repos\NETAssignment\Scaffolding\obj\Release\net10.0\Scaffolding.sourcelink.json
