@@ -1,0 +1,18 @@
+﻿@model List<Assignment_3.Models.Product>
+
+@{
+    Layout = null;
+}
+
+<h2>Product List</h2>
+
+<ul>
+    @foreach (var product in Model)
+    {
+        <li>
+            @product.Name - ₹@product.Price
+            |
+            <a href="/Product/Details/@product.ProductId">View Details</a>
+        </li>
+    }
+</ul>
