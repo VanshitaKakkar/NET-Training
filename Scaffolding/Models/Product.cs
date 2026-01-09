@@ -1,4 +1,4 @@
-﻿namespace Assignment_3.Models
+﻿namespace MVC_Assignment.Models
 {
     public class Product
     {

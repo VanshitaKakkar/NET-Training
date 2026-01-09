@@ -1,9 +1,9 @@
 using System.Diagnostics;
-using Assignment_3.Filter;
-using Assignment_3.Models;
+using MVC_Assignment.Filter;
+using MVC_Assignment.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Assignment_3.Controllers
+namespace MVC_Assignment.Controllers
 {
     public class HomeController : Controller
     {

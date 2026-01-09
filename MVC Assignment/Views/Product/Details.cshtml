@@ -1,14 +1,30 @@
-﻿@model Assignment_3.Models.Product
+﻿@model MVC_Assignment.Models.Product
 
 @{
     Layout = null;
+    ViewData["Title"] = "Product Details";
 }
 
 <h2>Product Details</h2>
 
-<p><b>ID:</b> @Model.ProductId</p>
-<p><b>Name:</b> @Model.Name</p>
-<p><b>Price:</b> ₹@Model.Price</p>
+<table class="table table-bordered">
+    <tr>
+        <th>Product ID</th>
+        <td>@Model.ProductId</td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <td>@Model.Name</td>
+    </tr>
+    <tr>
+        <th>Price</th>
+        <td>@Model.Price</td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td>@Model.Description</td>
+    </tr>
+</table>
 
-<a href="/Product">Back to List</a>
-
+<a asp-action="Edit" asp-route-id="@Model.ProductId" class="btn btn-warning">Edit</a>
+<a asp-action="Index" class="btn btn-secondary">Back</a>

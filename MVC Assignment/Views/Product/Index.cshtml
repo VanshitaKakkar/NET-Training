@@ -1,18 +1,40 @@
-﻿@model List<Assignment_3.Models.Product>
+﻿@model IEnumerable<MVC_Assignment.Models.Product>
 
-@{
+    @{
     Layout = null;
-}
-
-<h2>Product List</h2>
-
-<ul>
-    @foreach (var product in Model)
-    {
-        <li>
-            @product.Name - ₹@product.Price
-            |
-            <a href="/Product/Details/@product.ProductId">View Details</a>
-        </li>
+    ViewData["Title"] = "Product List";
     }
-</ul>
+
+    <h2>Product List</h2>
+
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
+    </p>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(m => m.First().ProductId)</th>
+                <th>@Html.DisplayNameFor(m => m.First().Name)</th>
+                <th>@Html.DisplayNameFor(m => m.First().Price)</th>
+                <th>@Html.DisplayNameFor(m => m.First().Description)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+{
+            <tr>
+                <td>@item.ProductId</td>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Description</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                </td>
+            </tr>
+}
+        </tbody>
+    </table>
