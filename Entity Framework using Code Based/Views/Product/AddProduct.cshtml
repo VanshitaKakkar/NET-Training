@@ -1,0 +1,25 @@
+﻿@model Entity_Framework.Models.Product
+
+@{
+    ViewData["Title"] = "Add Product";
+}
+
+<h2>Add Product</h2>
+
+@using (Html.BeginForm("AddProduct", "Product", FormMethod.Post))
+{
+    <div class="form-group mb-3">
+        @Html.LabelFor(m => m.ProductName, new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.ProductName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ProductName, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group mb-3">
+        @Html.LabelFor(m => m.Price, new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Price, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    @Html.ActionLink("Back", "Index", null, new { @class = "btn btn-secondary ms-2" })
+}
