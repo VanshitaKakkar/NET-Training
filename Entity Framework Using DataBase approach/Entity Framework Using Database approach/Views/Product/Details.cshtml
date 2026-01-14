@@ -1,0 +1,37 @@
+﻿@using Entity_Framework_Using_DataBase_approach.Models.ViewModels
+@model ProductDTO
+
+@{
+    ViewData["Title"] = "ProductDTO Details";
+    Layout = null;
+}
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<h2>Product Details</h2>
+<hr />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Product Name</th>
+        <td>@Model.Name</td>
+    </tr>
+
+    <tr>
+        <th>Price</th>
+        <td>₹ @Model.Price</td>
+    </tr>
+
+    <tr>
+        <th>Stock Quantity</th>
+        <td>@Model.StockQuantity</td>
+    </tr>
+
+    <tr>
+        <th>Category</th>
+        <td>@Model.CategoryName</td>
+    </tr>
+</table>
+
+
+<a asp-action="Index" class="btn btn-secondary">Back</a>

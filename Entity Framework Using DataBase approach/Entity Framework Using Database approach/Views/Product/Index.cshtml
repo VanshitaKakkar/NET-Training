@@ -1,0 +1,156 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.PageTitle</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container mt-4">
+
+        <h2>@ViewBag.PageTitle</h2>
+        <p class="text-muted">@ViewBag.InfoText</p>
+
+        <p class="fw-bold">
+            Total Products: @ViewData["TotalProducts"]
+        </p>
+
+        <!-- SUCCESS MESSAGE -->
+        @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+        <!-- ERROR MESSAGE -->
+        @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+        <div class="d-flex justify-content-between mb-3">
+            <a href="/products/create" class="btn btn-success">
+                ➕ Add Product
+            </a>
+        </div>
+
+        <!-- FILTERS -->
+        <div class="row mb-3">
+            <div class="col-md-3">
+                @Html.TextBox("search", null,
+                    new { @class = "form-control", placeholder = "Search by name", id = "search" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.DropDownList("categoryId",
+                    new SelectList(ViewBag.Categories, "CategoryId", "CategoryName"),
+                    "All Categories",
+                    new { @class = "form-control", id = "categoryId" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.DropDownList("sortOrder",
+                    new List<SelectListItem>
+                    {
+                        new SelectListItem { Text="Sort by Price", Value="" },
+                        new SelectListItem { Text="Low → High", Value="price_asc" },
+                        new SelectListItem { Text="High → Low", Value="price_desc" }
+                    },
+                    new { @class="form-control", id="sortOrder" })
+            </div>
+
+            <div class="col-md-3">
+                <button id="btnFilter" class="btn btn-primary w-100">
+                    Apply Filters
+                </button>
+            </div>
+        </div>
+
+        <!-- TABLE -->
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th style="width:180px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="productTable">
+                <tr>
+                    <td colspan="4" class="text-center text-muted">
+                        Loading products...
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        function loadProducts() {
+            $.ajax({
+                url: '/products/filter-json',
+                type: 'GET',
+                dataType: 'json',
+                data: {
+                    search: $('#search').val(),
+                    categoryId: $('#categoryId').val(),
+                    sortOrder: $('#sortOrder').val()
+                },
+                success: function (data) {
+                    let html = '';
+                    if (data.length === 0) {
+                        html = `<tr>
+                            <td colspan="4" class="text-center text-danger">
+                                No products found
+                            </td>
+                        </tr>`;
+                    } else {
+                        $.each(data, function (i, p) {
+                            html += `<tr>
+                                <td>${p.name}</td>
+                                <td>₹ ${p.price}</td>
+                                <td>${p.categoryName}</td>
+                                <td>
+                                    <a href="/products/${p.productId}"
+                                       class="btn btn-sm btn-info me-1">View</a>
+
+                                    <a href="/products/edit/${p.productId}"
+                                       class="btn btn-sm btn-warning me-1">Edit</a>
+
+                                    <a href="/products/delete/${p.productId}"
+                                       class="btn btn-sm btn-danger"
+                                       onclick="return confirm('Delete product?')">
+                                       Delete
+                                    </a>
+                                </td>
+                            </tr>`;
+                        });
+                    }
+                    $('#productTable').html(html);
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            loadProducts();
+            $('#btnFilter').click(loadProducts);
+            $('#search').keyup(loadProducts);
+        });
+    </script>
+
+</body>
+</html>
