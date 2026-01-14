@@ -1,0 +1,22 @@
+﻿@model Category
+
+@{
+    ViewBag.Title = "Edit Category";
+}
+
+<h2>Edit Category</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.CategoryId)
+
+    <div>
+        @Html.LabelFor(m => m.CategoryName)
+        @Html.TextBoxFor(m => m.CategoryName)
+        @Html.ValidationMessageFor(m => m.CategoryName)
+    </div>
+
+    <br />
+    <input type="submit" value="Update" />
+}
+
