@@ -696,3 +696,4 @@ C:\Users\vkakkar\source\repos\NETAssignment\Entity Framework Using DataBase appr
 C:\Users\vkakkar\source\repos\NETAssignment\Entity Framework Using DataBase approach\Entity Framework Using DataBase Approach\obj\Debug\net10.0\Entity F.A2AF4C4B.Up2Date
 C:\Users\vkakkar\source\repos\NETAssignment\Entity Framework Using DataBase approach\Entity Framework Using DataBase Approach\obj\Debug\net10.0\Entity Framework Using DataBase Approach.genruntimeconfig.cache
 C:\Users\vkakkar\source\repos\NETAssignment\Entity Framework Using DataBase approach\Entity Framework Using DataBase Approach\obj\Debug\net10.0\ref\Entity Framework Using DataBase Approach.dll
+C:\Users\vkakkar\source\repos\NETAssignment\Entity Framework Using DataBase approach\Entity Framework Using DataBase Approach\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

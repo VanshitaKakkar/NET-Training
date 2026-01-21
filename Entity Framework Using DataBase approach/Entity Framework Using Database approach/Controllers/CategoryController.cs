@@ -1,107 +1,84 @@
-﻿using AutoMapper;
-using Entity_Framework.Data;
-using Entity_Framework_Using_DataBase_approach.Models;
-using Entity_Framework_Using_DataBase_approach.Models.ViewModels;
+﻿using Entity_Framework_Using_DataBase_approach.Models.ViewModels;
+using Entity_Framework_Using_DataBase_approach.Services.InterFaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
-namespace Entity_Framework_Using_DataBase_approach.Controllers
+[Authorize]
+[Route("categories")]
+public class CategoryController : Controller
 {
-    [Route("categories")]
-    public class CategoryController : Controller
+    private readonly ICategoryService _categoryService;
+
+    public CategoryController(ICategoryService categoryService)
     {
-        private readonly MyDbContext myDbContext;
-        private readonly IMapper mapper;
+        _categoryService = categoryService;
+    }
 
-        public CategoryController(MyDbContext myDbContext, IMapper mapper)
-        {
-            this.myDbContext = myDbContext;
-            this.mapper = mapper;
-        }
+    [HttpGet("")]
+    public async Task<IActionResult> Index()
+    {
+        ViewBag.PageTitle = "Category Management";
+        ViewData["TotalCategories"] = await _categoryService.GetTotalCategoriesAsync();
+        var categories = await _categoryService.GetAllCategoriesAsync();
+        return View(categories);
+    }
 
-        // GET: /categories
-        [HttpGet("")]
-        public IActionResult Index()
-        {
-            ViewBag.PageTitle = "Category Management";
-            ViewData["TotalCategories"] = myDbContext.Categories.Count();
+    [Authorize(Roles = "Admin")]
+    [HttpGet("create")]
+    public IActionResult Create()
+    {
+        ViewBag.PageTitle = "Add Category";
+        return View();
+    }
 
-            var categories = myDbContext.Categories.ToList();
-            var dtoList = mapper.Map<List<CategoryDTO>>(categories);
-
-            return View(dtoList);
-        }
-
-        // GET: /categories/create
-        [HttpGet("create")]
-        public IActionResult Create()
-        {
-            ViewBag.PageTitle = "Add Category";
-            return View();
-        }
-
-        // POST: /categories/create
-        [HttpPost("create")]
-        public IActionResult Create(CategoryDTO dto)
-        {
-            if (!ModelState.IsValid)
-                return View(dto);
-
-            bool exists = myDbContext.Categories
-                .Any(c => c.CategoryName == dto.CategoryName);
-
-            if (exists)
-            {
-                TempData["ErrorMessage"] = "Category already exists";
-                return RedirectToAction(nameof(Create));
-            }
-
-            var category = mapper.Map<Category>(dto);
-
-            myDbContext.Categories.Add(category);
-            myDbContext.SaveChanges();
-
-            TempData["SuccessMessage"] = "Category added successfully";
-            return RedirectToAction(nameof(Index));
-        }
-
-        // GET: /categories/edit/5
-        [HttpGet("edit/{id:int}")]
-        public IActionResult Edit(int id)
-        {
-            var category = myDbContext.Categories.Find(id);
-
-            if (category == null)
-            {
-                TempData["ErrorMessage"] = "Category not found";
-                return RedirectToAction(nameof(Index));
-            }
-
-            ViewBag.PageTitle = "Edit Category";
-            var dto = mapper.Map<CategoryDTO>(category);
-
+    [Authorize(Roles = "Admin")]
+    [HttpPost("create")]
+    public async Task<IActionResult> Create(CategoryDTO dto)
+    {
+        if (!ModelState.IsValid)
             return View(dto);
+
+        if (await _categoryService.CategoryExistsAsync(dto.CategoryName))
+        {
+            TempData["ErrorMessage"] = "Category already exists";
+            return RedirectToAction(nameof(Create));
         }
 
-        // POST: /categories/edit/5
-        [HttpPost("edit/{id:int}")]
-        public IActionResult Edit(CategoryDTO dto)
+        await _categoryService.CreateCategoryAsync(dto);
+        TempData["SuccessMessage"] = "Category added successfully";
+        return RedirectToAction(nameof(Index));
+    }
+
+    [Authorize(Roles = "Admin")]
+    [HttpGet("edit/{id:int}")]
+    public async Task<IActionResult> Edit(int id)
+    {
+        var category = await _categoryService.GetCategoryByIdAsync(id);
+        if (category == null)
         {
-            if (!ModelState.IsValid)
-                return View(dto);
-
-            var category = myDbContext.Categories.Find(dto.CategoryId);
-            if (category == null)
-            {
-                TempData["ErrorMessage"] = "Category not found";
-                return RedirectToAction(nameof(Index));
-            }
-
-            mapper.Map(dto, category);
-            myDbContext.SaveChanges();
-
-            TempData["SuccessMessage"] = "Category updated successfully";
+            TempData["ErrorMessage"] = "Category not found";
             return RedirectToAction(nameof(Index));
         }
+
+        ViewBag.PageTitle = "Edit Category";
+        return View(category);
+    }
+
+    [Authorize(Roles = "Admin")]
+    [HttpPost("edit/{id:int}")]
+    public async Task<IActionResult> Edit(CategoryDTO dto)
+    {
+        if (!ModelState.IsValid)
+            return View(dto);
+
+        bool updated = await _categoryService.UpdateCategoryAsync(dto);
+        if (!updated)
+        {
+            TempData["ErrorMessage"] = "Category not found";
+            return RedirectToAction(nameof(Index));
+        }
+
+        TempData["SuccessMessage"] = "Category updated successfully";
+        return RedirectToAction(nameof(Index));
     }
 }

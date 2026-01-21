@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\vkakkar\\source\\repos\\NETAssignment\\Entity Framework Using DataBase approach\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{68AA5528-66E1-F36C-D7EA-62454FBC8553}|Entity Framework Using DataBase Approach\\Entity Framework Using DataBase Approach.csproj|c:\\users\\vkakkar\\source\\repos\\netassignment\\entity framework using database approach\\entity framework using database approach\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{68AA5528-66E1-F36C-D7EA-62454FBC8553}|Entity Framework Using DataBase Approach\\Entity Framework Using DataBase Approach.csproj|solutionrelative:entity framework using database approach\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{68AA5528-66E1-F36C-D7EA-62454FBC8553}|Entity Framework Using DataBase Approach\\Entity Framework Using DataBase Approach.csproj|c:\\users\\vkakkar\\source\\repos\\netassignment\\entity framework using database approach\\entity framework using database approach\\views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68AA5528-66E1-F36C-D7EA-62454FBC8553}|Entity Framework Using DataBase Approach\\Entity Framework Using DataBase Approach.csproj|solutionrelative:entity framework using database approach\\views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{68AA5528-66E1-F36C-D7EA-62454FBC8553}|Entity Framework Using DataBase Approach\\Entity Framework Using DataBase Approach.csproj|c:\\users\\vkakkar\\source\\repos\\netassignment\\entity framework using database approach\\entity framework using database approach\\views\\category\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{68AA5528-66E1-F36C-D7EA-62454FBC8553}|Entity Framework Using DataBase Approach\\Entity Framework Using DataBase Approach.csproj|solutionrelative:entity framework using database approach\\views\\category\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{68AA5528-66E1-F36C-D7EA-62454FBC8553}|Entity Framework Using DataBase Approach\\Entity Framework Using DataBase Approach.csproj|c:\\users\\vkakkar\\source\\repos\\netassignment\\entity framework using database approach\\entity framework using database approach\\services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68AA5528-66E1-F36C-D7EA-62454FBC8553}|Entity Framework Using DataBase Approach\\Entity Framework Using DataBase Approach.csproj|solutionrelative:entity framework using database approach\\services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{68AA5528-66E1-F36C-D7EA-62454FBC8553}|Entity Framework Using DataBase Approach\\Entity Framework Using DataBase Approach.csproj|c:\\users\\vkakkar\\source\\repos\\netassignment\\entity framework using database approach\\entity framework using database approach\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{68AA5528-66E1-F36C-D7EA-62454FBC8553}|Entity Framework Using DataBase Approach\\Entity Framework Using DataBase Approach.csproj|solutionrelative:entity framework using database approach\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{68AA5528-66E1-F36C-D7EA-62454FBC8553}|Entity Framework Using DataBase Approach\\Entity Framework Using DataBase Approach.csproj|c:\\users\\vkakkar\\source\\repos\\netassignment\\entity framework using database approach\\entity framework using database approach\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68AA5528-66E1-F36C-D7EA-62454FBC8553}|Entity Framework Using DataBase Approach\\Entity Framework Using DataBase Approach.csproj|solutionrelative:entity framework using database approach\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68AA5528-66E1-F36C-D7EA-62454FBC8553}|Entity Framework Using DataBase Approach\\Entity Framework Using DataBase Approach.csproj|c:\\users\\vkakkar\\source\\repos\\netassignment\\entity framework using database approach\\entity framework using database approach\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68AA5528-66E1-F36C-D7EA-62454FBC8553}|Entity Framework Using DataBase Approach\\Entity Framework Using DataBase Approach.csproj|solutionrelative:entity framework using database approach\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,41 +31,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CategoryController.cs",
-              "DocumentMoniker": "C:\\Users\\vkakkar\\source\\repos\\NETAssignment\\Entity Framework Using DataBase approach\\Entity Framework Using Database approach\\Controllers\\CategoryController.cs",
-              "RelativeDocumentMoniker": "Entity Framework Using Database approach\\Controllers\\CategoryController.cs",
-              "ToolTip": "C:\\Users\\vkakkar\\source\\repos\\NETAssignment\\Entity Framework Using DataBase approach\\Entity Framework Using Database approach\\Controllers\\CategoryController.cs",
-              "RelativeToolTip": "Entity Framework Using Database approach\\Controllers\\CategoryController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowCcAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-14T09:52:28.382Z",
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\vkakkar\\source\\repos\\NETAssignment\\Entity Framework Using DataBase approach\\Entity Framework Using Database approach\\Views\\Product\\Details.cshtml",
+              "RelativeDocumentMoniker": "Entity Framework Using Database approach\\Views\\Product\\Details.cshtml",
+              "ToolTip": "C:\\Users\\vkakkar\\source\\repos\\NETAssignment\\Entity Framework Using DataBase approach\\Entity Framework Using Database approach\\Views\\Product\\Details.cshtml",
+              "RelativeToolTip": "Entity Framework Using Database approach\\Views\\Product\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-19T07:40:52.035Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\vkakkar\\source\\repos\\NETAssignment\\Entity Framework Using DataBase approach\\Entity Framework Using Database approach\\Views\\Category\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Entity Framework Using Database approach\\Views\\Category\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\vkakkar\\source\\repos\\NETAssignment\\Entity Framework Using DataBase approach\\Entity Framework Using Database approach\\Views\\Category\\Edit.cshtml",
-              "RelativeToolTip": "Entity Framework Using Database approach\\Views\\Category\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-14T09:47:11.724Z",
-              "EditorCaption": ""
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "C:\\Users\\vkakkar\\source\\repos\\NETAssignment\\Entity Framework Using DataBase approach\\Entity Framework Using Database approach\\Services\\Interfaces\\IProductService.cs",
+              "RelativeDocumentMoniker": "Entity Framework Using Database approach\\Services\\Interfaces\\IProductService.cs",
+              "ToolTip": "C:\\Users\\vkakkar\\source\\repos\\NETAssignment\\Entity Framework Using DataBase approach\\Entity Framework Using Database approach\\Services\\Interfaces\\IProductService.cs",
+              "RelativeToolTip": "Entity Framework Using Database approach\\Services\\Interfaces\\IProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T07:30:56.08Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\vkakkar\\source\\repos\\NETAssignment\\Entity Framework Using DataBase approach\\Entity Framework Using Database approach\\Views\\Category\\Create.cshtml",
-              "RelativeDocumentMoniker": "Entity Framework Using Database approach\\Views\\Category\\Create.cshtml",
-              "ToolTip": "C:\\Users\\vkakkar\\source\\repos\\NETAssignment\\Entity Framework Using DataBase approach\\Entity Framework Using Database approach\\Views\\Category\\Create.cshtml",
-              "RelativeToolTip": "Entity Framework Using Database approach\\Views\\Category\\Create.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAwwCQAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-14T09:46:02.131Z",
-              "EditorCaption": ""
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\vkakkar\\source\\repos\\NETAssignment\\Entity Framework Using DataBase approach\\Entity Framework Using Database approach\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "Entity Framework Using Database approach\\Services\\ProductService.cs",
+              "ToolTip": "C:\\Users\\vkakkar\\source\\repos\\NETAssignment\\Entity Framework Using DataBase approach\\Entity Framework Using Database approach\\Services\\ProductService.cs",
+              "RelativeToolTip": "Entity Framework Using Database approach\\Services\\ProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T07:29:59.324Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\vkakkar\\source\\repos\\NETAssignment\\Entity Framework Using DataBase approach\\Entity Framework Using Database approach\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Entity Framework Using Database approach\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\vkakkar\\source\\repos\\NETAssignment\\Entity Framework Using DataBase approach\\Entity Framework Using Database approach\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Entity Framework Using Database approach\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T07:28:50.755Z"
             }
           ]
         }

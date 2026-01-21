@@ -1,0 +1,57 @@
+﻿@model Entity_Framework_Using_DataBase_approach.Models.ViewModels.RegisterDTO
+@{
+    Layout = null;
+}
+<h2>Register</h2>
+
+
+@Html.ValidationSummary(true, "", new { style = "color:red" })
+
+@using (Html.BeginForm("Register", "Register", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(m => m.UserName)
+        @Html.TextBoxFor(m => m.UserName)
+        @Html.ValidationMessageFor(m => m.UserName, "", new { style = "color:red" })
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Password)
+        @Html.PasswordFor(m => m.Password)
+        @Html.ValidationMessageFor(m => m.Password, "", new { style = "color:red" })
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.ConfirmPassword)
+        @Html.PasswordFor(m => m.ConfirmPassword)
+        @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { style = "color:red" })
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Role)
+        @Html.DropDownListFor(
+        m => m.Role,
+        new SelectList(new[] { "User", "Admin" }),
+        "-- Select Role --"
+        )
+    @Html.ValidationMessageFor(m => m.Role, "", new { style = "color:red" })
+</div>
+
+<br />
+
+<button type="submit">Register</button>
+}
+
+<hr />
+
+@Html.ActionLink(
+"Already have an account? Login",
+    "Index",
+    "Login"
+)
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

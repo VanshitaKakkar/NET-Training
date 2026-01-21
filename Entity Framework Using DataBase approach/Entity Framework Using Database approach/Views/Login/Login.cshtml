@@ -1,0 +1,19 @@
+﻿@{
+    Layout = null;
+}
+<h2>Login</h2>
+
+<form method="post">
+    <input type="text" name="username" placeholder="Username" required />
+    <input type="password" name="password" placeholder="Password" required />
+    <button type="submit">Login</button>
+</form>
+
+@Html.ActionLink(
+"Dont have an account? Register",
+    "Index",
+    "Register"
+)
+
+<p style="color:red">@ViewBag.Error</p>
+

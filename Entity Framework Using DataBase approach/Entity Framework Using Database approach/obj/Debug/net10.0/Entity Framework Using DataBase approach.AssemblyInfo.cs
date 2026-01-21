@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Entity Framework Using DataBase approach")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5dcc345a5219208ab40702d8e45fa2d42e977763")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+408644d02cc5aac87a73a6d0d3fb5bf2e05be65d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Entity Framework Using DataBase approach")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Entity Framework Using DataBase approach")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,5 +1,5 @@
 ﻿@{
-    Layout = null;
+    bool isAdmin = User.IsInRole("Admin");
 }
 
 <!DOCTYPE html>
@@ -22,51 +22,54 @@
             Total Products: @ViewData["TotalProducts"]
         </p>
 
-        <!-- SUCCESS MESSAGE -->
+  
         @if (TempData["SuccessMessage"] != null)
-    {
-        <div class="alert alert-success">
-            @TempData["SuccessMessage"]
-        </div>
-    }
+        {
+            <div class="alert alert-success">
+                @TempData["SuccessMessage"]
+            </div>
+        }
 
-        <!-- ERROR MESSAGE -->
+       
         @if (TempData["ErrorMessage"] != null)
-    {
-        <div class="alert alert-danger">
-            @TempData["ErrorMessage"]
-        </div>
-    }
+        {
+            <div class="alert alert-danger">
+                @TempData["ErrorMessage"]
+            </div>
+        }
 
-        <div class="d-flex justify-content-between mb-3">
-            <a href="/products/create" class="btn btn-success">
-                ➕ Add Product
-            </a>
-        </div>
+     
+        @if (isAdmin)
+        {
+            <div class="d-flex justify-content-between mb-3">
+                <a href="/products/create" class="btn btn-success">
+                     Add Product
+                </a>
+            </div>
+        }
 
-        <!-- FILTERS -->
         <div class="row mb-3">
             <div class="col-md-3">
                 @Html.TextBox("search", null,
-                    new { @class = "form-control", placeholder = "Search by name", id = "search" })
+                new { @class = "form-control", placeholder = "Search by name", id = "search" })
             </div>
 
             <div class="col-md-3">
                 @Html.DropDownList("categoryId",
-                    new SelectList(ViewBag.Categories, "CategoryId", "CategoryName"),
-                    "All Categories",
-                    new { @class = "form-control", id = "categoryId" })
+                                new SelectList(ViewBag.Categories, "CategoryId", "CategoryName"),
+                                "All Categories",
+                                new { @class = "form-control", id = "categoryId" })
             </div>
 
             <div class="col-md-3">
                 @Html.DropDownList("sortOrder",
-                    new List<SelectListItem>
-                    {
-                        new SelectListItem { Text="Sort by Price", Value="" },
-                        new SelectListItem { Text="Low → High", Value="price_asc" },
-                        new SelectListItem { Text="High → Low", Value="price_desc" }
-                    },
-                    new { @class="form-control", id="sortOrder" })
+                                new List<SelectListItem>
+                                {
+                                new SelectListItem { Text="Sort by Price", Value="" },
+                                new SelectListItem { Text="Low → High", Value="price_asc" },
+                                new SelectListItem { Text="High → Low", Value="price_desc" }
+                                },
+                                new { @class = "form-control", id = "sortOrder" })
             </div>
 
             <div class="col-md-3">
@@ -83,7 +86,7 @@
                     <th>Name</th>
                     <th>Price</th>
                     <th>Category</th>
-                    <th style="width:180px;">Actions</th>
+                    <th style="width:220px;">Actions</th>
                 </tr>
             </thead>
             <tbody id="productTable">
@@ -112,6 +115,7 @@
                 },
                 success: function (data) {
                     let html = '';
+
                     if (data.length === 0) {
                         html = `<tr>
                             <td colspan="4" class="text-center text-danger">
@@ -126,8 +130,10 @@
                                 <td>${p.categoryName}</td>
                                 <td>
                                     <a href="/products/${p.productId}"
-                                       class="btn btn-sm btn-info me-1">View</a>
+                                       class="btn btn-sm btn-info me-1">View</a>`;
 
+                            if (@isAdmin.ToString().ToLower()) {
+                                html += `
                                     <a href="/products/edit/${p.productId}"
                                        class="btn btn-sm btn-warning me-1">Edit</a>
 
@@ -135,11 +141,13 @@
                                        class="btn btn-sm btn-danger"
                                        onclick="return confirm('Delete product?')">
                                        Delete
-                                    </a>
-                                </td>
-                            </tr>`;
+                                    </a>`;
+                            }
+
+                            html += `</td></tr>`;
                         });
                     }
+
                     $('#productTable').html(html);
                 }
             });
